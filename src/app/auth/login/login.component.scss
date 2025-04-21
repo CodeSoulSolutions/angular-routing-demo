@@ -1,0 +1,41 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+    padding: 20px;
+  
+    .card {
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      
+      .card-title {
+        color: #343a40;
+        font-weight: 600;
+      }
+  
+      .form-control {
+        &:focus {
+          border-color: #495057;
+          box-shadow: 0 0 0 0.25rem rgba(73, 80, 87, 0.25);
+        }
+      }
+  
+      .btn-primary {
+        background-color: #495057;
+        border-color: #495057;
+        
+        &:hover {
+          background-color: #343a40;
+          border-color: #343a40;
+        }
+        
+        &:disabled {
+          background-color: #6c757d;
+          border-color: #6c757d;
+        }
+      }
+    }
+  }

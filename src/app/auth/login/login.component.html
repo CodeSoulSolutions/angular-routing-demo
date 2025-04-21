@@ -1,0 +1,49 @@
+<div class="login-container">
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-title text-center mb-4">Admin Login</h2>
+        
+        <form (ngSubmit)="login()" #loginForm="ngForm">
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input 
+              type="text" 
+              class="form-control" 
+              id="username" 
+              [(ngModel)]="credentials.username" 
+              name="username"
+              required
+            >
+          </div>
+          
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input 
+              type="password" 
+              class="form-control" 
+              id="password" 
+              [(ngModel)]="credentials.password" 
+              name="password"
+              required
+            >
+          </div>
+          
+          <div *ngIf="errorMessage" class="alert alert-danger">
+            {{ errorMessage }}
+          </div>
+          
+          <button 
+            type="submit" 
+            class="btn btn-primary w-100" 
+            [disabled]="isLoading"
+          >
+            <span *ngIf="!isLoading">Login</span>
+            <span *ngIf="isLoading">
+              <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+              Logging in...
+            </span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
